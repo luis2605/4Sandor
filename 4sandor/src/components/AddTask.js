@@ -32,15 +32,15 @@ const AddTask = ({ onAddTaskMenu, tasks, addTaskHandler }) => {
   };
   //generating random for id
 
-  // const getRandom = (min, max) => {
-  //   return Math.floor(Math.random() * (max - min) + min);
-  // };
+  const getRandom = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
 
   const submitt = (e) => {
     e.preventDefault();
     if (taskAdded.length !== 0) {
       addTaskHandler({
-        // id: getRandom(tasks.length, 1000),
+        id: getRandom(tasks.length, 1000),
         text: taskAdded,
         day: dayAdded,
         reminder: reminderAdded,

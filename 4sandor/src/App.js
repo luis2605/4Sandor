@@ -8,34 +8,55 @@ import CurrentDate from "./components/CurrentDate";
 import Footer from "./components/Footer";
 import { About } from "./components/About";
 
-function App() {
-  useEffect(() => {
-    const getTasks = async () => {
-      const taskFromServer = await fetchTasks();
-      setTasks(taskFromServer);
-    };
+import db from "./db.json";
 
-    getTasks();
-  }, []);
+function App() {
+  // useEffect(() => {
+  //   const getTasks = async () => {
+  //     const taskFromServer = await fetchTasks();
+  //     setTasks(taskFromServer);
+  //   };
+
+  //   getTasks();
+  // }, []);
   // Fetch Tasks from json-server on port 5000
 
-  const fetchTasks = async () => {
-    const res = await fetch("http://localhost:5000/tasks");
-    const data = await res.json();
+  // const fetchTasks = async () => {
+  //   const res = await fetch("http://localhost:5000/tasks");
+  //   const data = await res.json();
 
-    return data;
-  };
+  //   return data;
+  // };
 
   // Fetch Task from json-server on port 5000
 
-  const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`);
-    const data = await res.json();
+  // const fetchTask = async (id) => {
+  //   const res = await fetch(`http://localhost:8000/tasks/${id}`);
+  //   const data = await res.json();
 
-    return data;
-  };
+  //   return data;
+  // };
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    {
+      text: "testing for email ",
+      day: "feb 5th at 15:00",
+      reminder: true,
+      id: 0,
+    },
+    {
+      text: "testing for email ",
+      day: "feb 5th at 15:00",
+      reminder: true,
+      id: 1,
+    },
+    {
+      text: "testing for email ",
+      day: "feb 5th at 15:00",
+      reminder: true,
+      id: 2,
+    },
+  ]);
   const activeTasks = tasks.filter((task) => {
     if (task.reminder === true) {
       return true;
@@ -49,34 +70,34 @@ function App() {
   const noTasks = (
     <p>Sorry, you are workin' to good.There are no task to show. </p>
   );
-  const deleteTask = async (id) => {
-    await fetch(`http://localhost:5000/tasks/${id}`, {
-      method: "DELETE",
-    });
+  const deleteTask = /*async*/ (id) => {
+    // await fetch(`http://localhost:8000/tasks/${id}`, {
+    //   method: "DELETE",
+    // });
 
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
   // toggle reminder
 
-  const toggleReminder = async (id) => {
-    const taskToToggle = await fetchTask(id);
+  const toggleReminder = /*async*/ (id) => {
+    // const taskToToggle = await fetchTask(id);
 
-    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
+    // const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
 
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(updTask),
-    });
+    // const res = await fetch(`http://localhost:8000/tasks/${id}`, {
+    //   method: "PUT",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(updTask),
+    // });
 
-    const data = await res.json();
-
+    // const data = await res.json();
+    console.log(id);
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, reminder: data.reminder } : task
+        task.id === id ? { ...task, reminder: !task.reminder } : task
       )
     );
   };
@@ -88,17 +109,18 @@ function App() {
   };
   //add task add new task to tasks
 
-  const addTask = async (task) => {
-    const res = await fetch("http://localhost:5000/tasks", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(task),
-    });
-    const data = await res.json();
+  const addTask = /*async*/ (task) => {
+    // const res = await fetch("http://localhost:8000/tasks", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(task),
+    // });
+    // const data = await res.json();
+    console.log(task);
 
-    setTasks([...tasks, data]);
+    setTasks([...tasks, task]);
   };
 
   return (

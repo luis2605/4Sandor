@@ -57,6 +57,7 @@ body {
 
 .current-date {
   margin: 2em auto;
+  display: flex;
 }
 .container-text-icon {
   display: flex;
