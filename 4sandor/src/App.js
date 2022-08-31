@@ -125,7 +125,7 @@ function App() {
         <CurrentDate />
         <Routes>
           <Route
-            path="/4Sandor"
+            path="/"
             exact
             element={
               <>
