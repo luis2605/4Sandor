@@ -12,9 +12,10 @@ body {
 
 .container {
   max-width: 500px;
-  margin: 30px auto;
+
+  margin: 0 auto;
   overflow: auto;
-  min-height: 300px;
+  min-height: 100vh;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
@@ -52,6 +53,10 @@ body {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.current-date {
+  margin: 2em auto;
 }
 .container-text-icon {
   display: flex;
@@ -121,8 +126,32 @@ body {
   flex: 2;
   height: 20px;
 }
+.about {
+  text-align: center;
+  margin: 3em auto;
+}
+
+.active-tasks {
+  margin: 2em auto;
+}
 
 footer {
-  margin-top: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+}
+
+/*aux classes*/
+
+.red {
+  background: rgba(255, 0, 0, 0.13);
+  color: red;
+}
+.text-center {
+  justify-content: center;
 }

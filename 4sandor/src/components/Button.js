@@ -1,19 +1,29 @@
 import React from "react";
 import PropTypes from "react";
 
-const Button = ({ color, text, onAddTask }) => {
-  const addTask = () => {
-    return onAddTask(true);
+const Button = ({
+  colorRed,
+  colorGreen,
+  textOpen,
+  textClose,
+  onAddTaskMenu,
+  onAddActive,
+}) => {
+  const addTaskMenu = () => {
+    if (onAddActive === false) {
+      return onAddTaskMenu(true);
+    }
+    return onAddTaskMenu(false);
   };
   return (
     <div>
       {" "}
       <button
-        onClick={addTask}
-        style={{ backgroundColor: color }}
+        onClick={addTaskMenu}
+        style={{ backgroundColor: onAddActive ? colorRed : colorGreen }}
         className="btn"
       >
-        {text}
+        {onAddActive ? textClose : textOpen}
       </button>
     </div>
   );
