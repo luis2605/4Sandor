@@ -8,17 +8,12 @@ import CurrentDate from "./components/CurrentDate";
 import Footer from "./components/Footer";
 import { About } from "./components/About";
 
-import db from "./db.json";
+// import db from "./db.json";
 
 function App() {
-  // useEffect(() => {
-  //   const getTasks = async () => {
-  //     const taskFromServer = await fetchTasks();
-  //     setTasks(taskFromServer);
-  //   };
-
-  //   getTasks();
-  // }, []);
+  useEffect(() => {
+    setTasks(tasks);
+  }, []);
   // Fetch Tasks from json-server on port 5000
 
   // const fetchTasks = async () => {
