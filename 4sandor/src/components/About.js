@@ -6,7 +6,7 @@ export const About = () => {
     <div className="about">
       <h4>Version 1.0.0</h4>
       <p>coded by Luisito Barquillo</p>
-      <Link to="/">Go Back</Link>
+      <Link to="4Sandor/">Go Back</Link>
     </div>
   );
 };
