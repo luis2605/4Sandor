@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/4Sandor/static/css/main.baabc559.css",
+    "main.js": "/4Sandor/static/js/main.aad19ad1.js",
+    "static/js/787.a35d6fee.chunk.js": "/4Sandor/static/js/787.a35d6fee.chunk.js",
+    "index.html": "/4Sandor/index.html",
+    "main.baabc559.css.map": "/4Sandor/static/css/main.baabc559.css.map",
+    "main.aad19ad1.js.map": "/4Sandor/static/js/main.aad19ad1.js.map",
+    "787.a35d6fee.chunk.js.map": "/4Sandor/static/js/787.a35d6fee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.baabc559.css",
+    "static/js/main.aad19ad1.js"
+  ]
+}
