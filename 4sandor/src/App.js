@@ -130,7 +130,7 @@ function App() {
                 )}
                 <p className="active-tasks">
                   {" "}
-                  you have active {activeTasks} from {tasks.length} tasks{" "}
+                  you have active {activeTasks} from {tasks.length} tasks.{" "}
                 </p>
               </>
             }
