@@ -71,6 +71,8 @@ body {
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  border-left: 5px solid red;
+  text-decoration: line-through;
   animation: moveToRight 1s ease-in-out;
 }
 
@@ -87,6 +89,7 @@ body {
 }
 .task.reminder {
   border-left: 5px solid green;
+  text-decoration: none;
 }
 
 .task h3 {
